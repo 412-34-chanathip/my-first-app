@@ -6,5 +6,7 @@ st.header(f"• ภาษีมูลค่าเพิ่ม (VAT 7%): **{vat:.
 net_price = price - vat
 vat = price * 0.07
 st.header(f"• ราคาสุทธิ: {net_price:.2f} บาท")
+
 st.divider()
+
 st.write(" นายชนาธิป ทาเกิด เลขที่ 34  ม.4/12")
