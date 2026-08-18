@@ -1,4 +1,4 @@
-import stremlit as st
+import streamlit as st
 
 st.markdown("# :red[💪 คำนวนค่าดัชนีมวลกาย BMI]")
 st.write("กรอกข้อมูลน้ำหนักและส่วนสูงของคุณ เพื่อเช็กสุขภาพเบื้องต้น")
