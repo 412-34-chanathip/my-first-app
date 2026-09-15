@@ -66,16 +66,63 @@ def show_result_dialog(ans1, ans2,ans3, ans4,ans5, ans6,ans7, ans8,ans9, ans10):
         score += 1
     else:
         st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
-    if u_ans1 == "11":
+    # ตรวจข้อ 3
+    if u_ans3 == "50":
         st.success("✅ ข้อ 1: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans1}')")
+        st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
+    # ตรวจข้อ 4
+    if u_ans4 == "99":
+        st.success("✅ ข้อ 2: ถูกต้อง")
+        score += 1
+    else:
+        st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
+     # ตรวจข้อ 5
+    if u_ans5 == "74":
+        st.success("✅ ข้อ 1: ถูกต้อง")
+        score += 1
+    else:
+        st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans5}')")
+
+    # ตรวจข้อ 6
+    if u_ans6 == "44":
+        st.success("✅ ข้อ 2: ถูกต้อง")
+        score += 1
+    else:
+        st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans6}')")
+    # ตรวจข้อ 7
+    if u_ans7 == "35":
+        st.success("✅ ข้อ 1: ถูกต้อง")
+        score += 1
+    else:
+        st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans7}')")
+
+    # ตรวจข้อ 8
+    if u_ans8 == "101":
+        st.success("✅ ข้อ 2: ถูกต้อง")
+        score += 1
+    else:
+        st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans8}')")
+    # ตรวจข้อ 9
+    if u_ans9 == "20":
+        st.success("✅ ข้อ 1: ถูกต้อง")
+        score += 1
+    else:
+        st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans9}')")
+
+    # ตรวจข้อ 10
+    if u_ans10 == "57":
+        st.success("✅ ข้อ 2: ถูกต้อง")
+        score += 1
+    else:
+        st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans10}')")
+    
    
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
-    if score == 2:
+    if score == 10:
         st.success("🎉 You win!")
     else:
         st.error("💀 You lose!")
@@ -104,13 +151,54 @@ ans1 = st.text_input(
     value=st.session_state.ans1_val,
 )
 ans2 = st.text_input(
-    "ข้อ 2: Cats love to eat `f _ s h`. 🐟",
+    "ข้อ 2: 16 + _ = 50",
     value=st.session_state.ans2_val,
+)
+ans3 = st.text_input(
+    "ข้อ 3: _ + 45 = 95",
+    value=st.session_state.ans3_val,
+)
+ans4 = st.text_input(
+    "ข้อ 4: _ - 98 = 1",
+    value=st.session_state.ans4_val,
+)
+ans5 = st.text_input(
+    "ข้อ 5: 87 - 13 = _",
+    value=st.session_state.ans5_val,
+)
+ans6 = st.text_input(
+    "ข้อ 6: 100 - _ = 56",
+    value=st.session_state.ans6_val,
+)
+ans7 = st.text_input(
+    "ข้อ 7: 85 + _ = 120",
+    value=st.session_state.ans7_val,
+)
+ans8 = st.text_input(
+    "ข้อ 8: 52 + 49 = _",
+    value=st.session_state.ans8_val,
+)
+ans9 = st.text_input(
+    "ข้อ 9: 35 - _ = 15",
+    value=st.session_state.ans9_val,
+)
+ans10 = st.text_input(
+    "ข้อ 10: 96 + _ = 153",
+    value=st.session_state.ans10_val,
 )
 
 # อัปเดตค่าล่าสุดเข้าตัวแปร
 st.session_state.ans1_val = ans1
 st.session_state.ans2_val = ans2
+st.session_state.ans3_val = ans3
+st.session_state.ans4_val = ans4
+st.session_state.ans5_val = ans5
+st.session_state.ans6_val = ans6
+st.session_state.ans7_val = ans7
+st.session_state.ans8_val = ans2
+st.session_state.ans9_val = ans9
+st.session_state.ans10_val = ans10
+
 
 # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มข้อ 3, 4 ตรงนี้
 
@@ -126,7 +214,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 
 # 5. แสดง Dialog ผลลัพธ์
 if st.session_state.get("is_ended", False):
-    show_result_dialog(ans1, ans2)
+    show_result_dialog(ans1, ans2, ans3, ans4,ans5, ans6,ans7, ans8,ans9, ans10)
 
 st.divider()
 st.write("ม.4/12 กลุ่ม7")
