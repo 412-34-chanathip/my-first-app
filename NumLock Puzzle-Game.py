@@ -52,6 +52,14 @@ def show_result_dialog(ans1, ans2,ans3, ans4,ans5, ans6,ans7, ans8,ans9, ans10):
 
     u_ans1 = ans1.strip().lower()
     u_ans2 = ans2.strip().lower()
+    u_ans3 = ans3.strip().lower()
+    u_ans4 = ans4.strip().lower()
+    u_ans5 = ans5.strip().lower()
+    u_ans6 = ans6.strip().lower()
+    u_ans7 = ans7.strip().lower()
+    u_ans8 = ans8.strip().lower()
+    u_ans9 = ans9.strip().lower()
+    u_ans10 = ans10.strip().lower()
 
     # ตรวจข้อ 1
     if u_ans1 == "11":
